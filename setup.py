@@ -11,7 +11,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', ]
+requirements = ['Click>=7.0','python_buy_sell', ]
 
 setup_requirements = ['pytest-runner', ]
 
@@ -26,8 +26,6 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
@@ -37,7 +35,7 @@ setup(
     description="python buy sell system, develop to practice python concepts.",
     entry_points={
         'console_scripts': [
-            'python_buy_sell=python_buy_sell.cli:main',
+            'buy_sell=python_buy_sell.cli:main',
         ],
     },
     install_requires=requirements,
@@ -46,7 +44,7 @@ setup(
     include_package_data=True,
     keywords='python_buy_sell',
     name='python_buy_sell',
-    packages=find_packages(include=['python_buy_sell', 'python_buy_sell.*']),
+    packages=find_packages(include=['python_buy_sell', 'python_buy_sell.*','python_buy_sell/clients']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
