@@ -5,17 +5,15 @@ import sys
 import click
 from .clients import commands as clients_commands
 
+CLIENTS_TABLE = '.clients.csv'
 
 @click.group()
 @click.pass_context
 def main(ctx, args=None):
-    """Console script for python_buy_sell."""
-    click.echo("Replace this message by putting your code into "
-               "python_buy_sell.cli.main")
-    click.echo("See click documentation at https://click.palletsprojects.com/")
+    """Console script for buy_sell."""
+    
     ctx.obj = {}
-
-#    return 0
+    ctx.obj['clients_table'] = CLIENTS_TABLE
 
 main.add_command(clients_commands.all)
 
