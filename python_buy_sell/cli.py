@@ -3,7 +3,7 @@
 """Console script for python_buy_sell."""
 import sys
 import click
-from .clients import commands as clients_commands
+from python_buy_sell.clients import commands as clients_commands
 
 CLIENTS_TABLE = '.clients.csv'
 
@@ -16,7 +16,3 @@ def main(ctx, args=None):
     ctx.obj['clients_table'] = CLIENTS_TABLE
 
 main.add_command(clients_commands.all)
-
-
-#if __name__ == "__main__":
-#    sys.exit(main())  # pragma: no cover
